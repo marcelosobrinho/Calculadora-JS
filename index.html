@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Js/jquery.min.js" type="text/javascript"></script>
+        <style>
+            .alinha{
+                float: right; 
+            }
+            .red{
+                background:#ff0909;
+            }
+            .blue{
+                background:dodgerblue;
+            }
+            
+            .green{
+                background:green;
+            }
+            .tamanho{
+            	width:250px;
+            }
+            .tamanhoP{
+            	width:125px;
+            }
+            
+            .btfree{
+                font:bold 24px Georgia, serif;
+                font-style:normal;
+                color:#ffffff;
+                border:3px solid #ffffff;
+                text-shadow:0px -1px 1px #222222;
+                box-shadow:2px 2px 5px #000000;
+                -moz-box-shadow:2px 2px 5px #000000;
+                -webkit-box-shadow:2px 2px 5px #000000;
+                border-radius:10px 10px 10px 10px;
+                -moz-border-radius:10px 10px 10px 10px;
+                -webkit-border-radius:10px 10px 10px 10px;
+                padding:20px 43px;
+                cursor:pointer;
+                margin:0 auto;
+            }
+            .btfree:active{
+                cursor:pointer;
+                position:relative;
+                top:2px;
+            }
+            
+        </style>
+        <script>
+            var num1 = "";
+            var num2 = "";
+            var op = "";
+            var result = 0;
+            $(function () {
+                $("#n1").click(function () {
+                    if (op == "") {
+                        num1 += 0;
+                    } else {
+                        num2 += 0;
+                    }
+
+                });
+
+                $("#n2").click(function () {
+                    if (op == "") {
+                        num1 += "1";
+                    } else {
+                        num2 += "1";
+                    }
+                });
+
+                $("#n3").click(function () {
+                    if (op == "") {
+                        num1 += "2";
+                    } else {
+                        num2 += "2";
+                    }
+                });
+
+                $("#n4").click(function () {
+                    if (op == "") {
+                        num1 += "3";
+                    } else {
+                        num2 += "3";
+                    }
+                });
+
+                $("#n5").click(function () {
+                    if (op == "") {
+                        num1 += "4";
+                    } else {
+                        num2 += "4";
+                    }
+                });
+
+                $("#n6").click(function () {
+                    if (op == "") {
+                        num1 += "5";
+                    } else {
+                        num2 += "5";
+                    }
+                });
+
+                $("#n7").click(function () {
+                    if (op == "") {
+                        num1 += "6";
+                    } else {
+                        num2 += "6";
+                    }
+                });
+
+                $("#n8").click(function () {
+                    if (op == "") {
+                        num1 += "7";
+                    } else {
+                        num2 += "7";
+                    }
+                });
+
+                $("#n9").click(function () {
+                    if (op == "") {
+                        num1 += "8";
+                    } else {
+                        num2 += "8";
+                    }
+                });
+                $("#ponto").click(function () {
+           			if (op=="") {
+
+                   		if(num1 ==""){
+                   			num1="0.";
+                   		}else{
+                   			num1+=".";
+                   		}
+               		}else{
+
+                   		if(num2 ==""){
+                   			num2="0.";
+                   		}else{
+                   			num2+=".";
+                   		}
+               		}
+               	});
+
+
+
+                $("#n10").click(function () {
+                    if (op == "") {
+                        num1 += "9";
+                    } else {
+                        num2 += "9";
+                    }
+                });
+
+                $("#soma").click(function () {
+                    op = "+";
+                });
+
+                $("#sub").click(function () {
+                    op = "-";
+                });
+
+                $("#divi").click(function () {
+                    op = "/";
+                });
+                $("#mul").click(function () {
+                    op = "*";
+                });
+
+
+                $("#c").click(function () {
+                    num1 = "";
+                    num2 = "";
+                    op = "";
+                    result = 0;
+                    location.reload();
+                });
+
+                $("button").click(function () {
+
+                    document.getElementById("divNum1").innerHTML =
+                            "<label for='num1'>" + num1 + "</label> ";
+                    document.getElementById("divOp").innerHTML =
+                            "<label for='op'>" + op + "</label> ";
+                    document.getElementById("divNum2").innerHTML =
+                            "<label for='num2'>" + num2 + "</label> ";
+
+                    if (op == "+") {
+                        result = (parseFloat(num1) + parseFloat(num2));
+                        document.getElementById("divTot").innerHTML =
+                                "<label for='num1'> = " + result + "</label> <br> ";
+                    } else if (op == "/") {
+                        result = (parseFloat(num1) / parseFloat(num2));
+                        document.getElementById("divTot").innerHTML =
+                                "<label for='num1'> = " + result + "</label> <br> ";
+                    } else if (op == "-") {
+                        result = (parseFloat(num1) - parseFloat(num2));
+                        document.getElementById("divTot").innerHTML =
+                                "<label for='num1'> = " + result + "</label> <br> ";
+
+                    } else if (op == "*") {
+                        result = (parseFloat(num1) * parseFloat(num2));
+                        document.getElementById("divTot").innerHTML =
+                                "<label for='num1'> = " + result + "</label> <br> ";
+                    }
+
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div>
+            
+            <div><center><h1>Calculadora</h1></center></div>
+            <br><br><br><br>
+            <center>
+                <table>
+                    <tr>
+                        <th colspan="2"><div id="divNum1"></div></th>
+                    <th colspan="2"><div id="divOp"></div></th>
+                    <th colspan="2"><div id="divNum2"></div></th>
+
+                    </tr>
+                    <tr>
+                        <th colspan="5"><div id="divTot" class="alinha"></div></th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" ><button id="soma" value="+" class="btfree blue tamanho" > + </button></th>
+                        <th colspan="2" ><button id="sub" value="-" class="btfree blue tamanho"> - </button></th>
+                        <th colspan="2" ><button  id="mul" value="*" class="btfree blue tamanho"> X </button></th>
+                        
+                    </tr>
+                    <tr>
+                       <th colspan="2" ><button  id="divi" value="/" class="btfree blue tamanho"> / </button></th>
+                       <th colspan="2"><button id="ponto" class=" btfree blue tamanhoP"> . </button> <button id="c" class=" btfree red tamanhoP"> C </button> </th>
+                       <th colspan="2" ><button id="n1" value="0" class="btfree green tamanho"> 0 </button></th>
+
+                    </tr>
+                    <tr>
+                        <th colspan="2"><button id="n2" value="1" class="btfree green tamanho"> 1 </button></th>
+                        <th colspan="2"><button id="n3" value="2" class="btfree green tamanho"> 2 </button></th>
+                        <th colspan="2"><button id="n4" value="3" class="btfree green tamanho"> 3 </button></th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><button id="n5" value="4" class="btfree green tamanho"> 4 </button></th>
+                        <th colspan="2"><button id="n6" value="5" class="btfree green tamanho"> 5 </button></th>
+                        <th colspan="2"><button id="n7" value="6" class="btfree green tamanho"> 6 </button></th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><button id="n8" value="7" class="btfree green tamanho"> 7 </button></th>
+                        <th colspan="2"><button id="n9" value="8" class="btfree green tamanho"> 8 </button></th>
+                        <th colspan="2"><button id="n10" value="9" class="btfree green tamanho"> 9 </button></th>
+
+                    </tr>
+                    <tr>
+                        <th> _____________ </th>
+                        <th> _____________ </th>
+                        <th> _____________ </th>
+                        <th> _____________ </th>
+                        <th> _____________ </th>
+                        <th> _____________ </th>
+
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </body>
+</html>
